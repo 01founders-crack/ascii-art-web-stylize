@@ -1,24 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Center the form on the page and make it responsive */
+html {
+  background-color: black;
 }
 
-/* Center the form on the page */
 form {
   margin: 0 auto;
-  width: 40%;
+  max-width: 50%; /* Adjust maximum width as needed */
   padding: 1em;
   border: 3px solid #ccc;
   border-radius: 1em;
-  background-color: white;
+  background: linear-gradient(180deg,black 40%,white);
+  color: white;
 }
 
-/* Uniform text field size */
+body {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* Make text fields responsive */
 input,
 textarea {
   font: 1em sans-serif;
-  width: 100%; /* Use full width of the form */
+  width: 100%;
   padding: 0.5em;
   margin: 0.5em 0;
   border: 1px solid #999;
@@ -33,46 +37,54 @@ textarea:focus {
   border-color: #000;
 }
 
-/* Align multiline text fields with their labels */
-textarea {
-  vertical-align: top;
-  height: 5em;
-}
-
-/* Center align header and footer */
+/* Center-align header and footer, make them responsive */
 .asciiheader,
 .asciifooter {
   text-align: center;
   padding: 1em;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
+}
+
+.asciifooter {
+  margin-top: 250px;
 }
 
 /* Set body background and text color */
 .asciibody {
   background-color: black;
   color: white;
+  padding: 1em; /* Add padding to main content for spacing */
 }
 
-/* Center align output */
+/* Style radio buttons and labels */
+input[type="radio"] {
+  vertical-align: middle;
+  margin-right: 0.5em;
+  margin-bottom: -30px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the generated ASCII art output */
 .asciioutput {
   text-align: left;
   overflow: auto;
-}
-
-/* Style radio buttons */
-input[type="radio"] {
-  vertical-align: middle; /* Align radio button vertically with label */
-  margin-right: 0.5em; /* Add spacing between radio button and label */
-  margin-bottom: -30px; /* Adjust vertical alignment if needed */
-}
-
-/* Style radio button labels */
-label {
-  display: flex; /* Use flex layout for aligning items */
-  align-items: center; /* Center items vertically */
+  max-width: 100%; /* Allow the pre element to be responsive */
+  white-space: pre-wrap; /* Wrap long lines in pre element */
+  background-color: white;
 }
 
 .error {
   text-align: center;
+}
+
+/* Make the form elements responsive on smaller screens */
+@media (max-width: 768px) {
+  form {
+    max-width: 100%;
+  }
 }
